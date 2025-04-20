@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ArrowRight,
   ArrowUpNarrowWide,
@@ -7,6 +7,7 @@ import {
   Twitter,
 } from "lucide-react";
 const Home = ({ name }) => {
+  const [email, setemail] = useState("");
   return (
     <div className="h-full w-full bg-[#edecec] ">
       <div className="flex flex-col bg-[url('/bg.jpg')] bg-blend-soft-light bg-center justify-center items-center  bg-[#f7f7f7]">
@@ -30,7 +31,7 @@ const Home = ({ name }) => {
           </div>
         </nav>
 
-        <main className="flex flex-col justify-center items-center text-center w-full mt-40">
+        <main className="flex flex-col justify-center items-center text-center w-full mt-30">
           {/* Hero section */}
           <div
             id="home"
@@ -43,12 +44,41 @@ const Home = ({ name }) => {
             <h1 className="mt-4">
               Use DevunoAI to analyze your code and receive instant feedback.
             </h1>
-            <span className="text-sm lg:text-xl font-bold flex gap-1 text-white bg-[#1e222c] mt-4 px-4 py-2 rounded-xl">
-              Get Started <ArrowRight className="mt-0.5" />
-            </span>
+            <div className="flex flex-row items-center justify-center mt-8 gap-2 w-full max-w-lg">
+              <input
+                onChange={(e) => setemail(e.target.value)}
+                value={email}
+                type="text"
+                placeholder="Enter your email to get notified when we launch"
+                className="
+      flex-grow
+      text-xs md:text-sm
+      p-2 md:p-3
+      placeholder:text-gray-500
+      text-black
+      border border-gray-300
+      rounded-l-lg
+      focus:outline-none focus:ring-2 focus:[#1e222c]
+    "
+              />
+              <button
+                onClick={() => setemail("")}
+                className="
+      text-xs md:text-sm
+      font-bold
+text-[#dadbde]
+     bg-[#1e222c]
+      px-3 md:px-5
+      py-2 md:py-3
+      rounded-r-lg
+    "
+              >
+                Get Email
+              </button>
+            </div>
           </div>
 
-          {/* Feature section */}
+          {/* Feature section
           <div
             id="features"
             className="font-serif flex flex-col justify-center items-center mt-50"
@@ -98,11 +128,11 @@ const Home = ({ name }) => {
                 </h1>
               </div>
             </div>
-          </div>
+          </div> */}
         </main>
 
         {/* Footer section */}
-        <footer className="flex flex-row bg-[#1e222c] justify-around mt-40 w-full h-fit p-4 items-center gap-10">
+        <footer className="flex flex-row bg-[#1e222c] justify-around mt-20 w-full h-fit p-4 items-center gap-10">
           <h1 className="text-[#97999e]">
             Made with ❤️ by <span className="text-white"> Vivek Upasani</span>
           </h1>
