@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* *{
+    font-family: sans-serif;
+} */
+
+.react-simple-code-editor {
+    font-family: "Fira Code", monospace;
+    font-size: 14px;
+    background-color: #f7f7f7;
+    color: #1e222c;
+  }
