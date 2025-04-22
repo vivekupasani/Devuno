@@ -1,13 +1,13 @@
 import React from "react";
 import {
-    ArrowRight,
-    Code,
-    FileCheck,
-    Github,
-    Linkedin,
-    Twitter,
-    Upload,
-  } from "lucide-react";
+  ArrowRight,
+  Code,
+  FileCheck,
+  Github,
+  Linkedin,
+  Twitter,
+  Upload,
+} from "lucide-react";
 const Bottom = () => {
   return (
     <footer className="flex flex-col items-center justify-around w-full gap-5 p-4 mt-20 bg-[#1e222c] md:flex-row lg:flex-row lg:mt-40 lg:w-full lg:gap-10">

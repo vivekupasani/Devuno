@@ -1,0 +1,47 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+client/node_modules/
+server/node_modules/
+
+# Environment files
+.env
+.env.*    # For cases like .env.development or .env.production
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Optional npm cache and yarn cache
+.npm/
+.yarn/
+
+# React specific (client-side)
+client/build/
+
+# Optional test coverage
+coverage/
+
+# Others
+*.log
+*.tgz
