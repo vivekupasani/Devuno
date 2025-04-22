@@ -66,7 +66,7 @@ const Ground = () => {
     const data = {
       contents: code,
     };
-    const res = await axios.post("http://localhost:8080/api/v1/review", data);
+    const res = await axios.post("https://devuno-backend.onrender.com/api/v1/review", data);
 
     if (res.status === 200) {
       setIsLoading(false);
