@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import Bottom from "../components/Bottom";
+import { motion } from "motion/react";
 
 const Home = () => {
   const steps = [
@@ -45,7 +46,20 @@ const Home = () => {
 
         <main className="flex flex-col justify-center items-center w-full mt-5 lg:w-full lg:mt-30">
           {/* Hero section */}
-          <div
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+
+              ease: "easeInOut",
+            }}
+            transition={{
+              duration: 0.3,
+            }}
             id="home"
             className="flex flex-col justify-center px-2 items-center text-center h-96 w-fit font-serif"
           >
@@ -59,25 +73,43 @@ const Home = () => {
               DevunoAI detects issues, suggests improvements, and helps you
               write better code in seconds.{" "}
             </h1>
-            <Link className="decoration-none" to="/playground">
-              {" "}
-              <span className="flex items-center justify-center cursor-pointer gap-1 px-6 py-3 mt-4 text-sm font-bold text-white bg-[#1e222c] rounded-xl md:px-8 md:py-3 md:gap-2 lg:text-xl lg:px-8 lg:py-3 lg:gap-3 lg:mt-3">
-                Get Started <ArrowRight className="" />
-              </span>
-            </Link>
-          </div>
+            <motion.div
+              className="flex items-center justify-center cursor-pointer gap-1 px-6 py-3 mt-4 text-sm font-bold text-white bg-[#1e222c] rounded-xl md:px-8 md:py-3 md:gap-2 lg:text-xl lg:px-8 lg:py-3 lg:gap-3 lg:mt-3 h-12"
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.5 },
+                perspective: 1000,
+                rotateY: 10,
+                boxShadow: "0px 0px 20px rgba(42, 123, 155, 1)",
+              }}
+            >
+              <Link className="decoration-none" to="/playground">
+                {" "}
+                <span className="flex flex-row gap-1 justify-center items-center">
+                  {" "}
+                  Get Started <ArrowRight className="" />
+                </span>
+              </Link>
+            </motion.div>
+          </motion.div>
 
           {/* Image section*/}
-          <div className="bg-[#e8e8e8] m-5 flex items-center justify-center p-2 rounded-2xl lg:p-5 lg:rounded-4xl lg:mt-15">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
+            className="bg-[#e8e8e8] m-5 flex items-center justify-center p-2 rounded-2xl lg:p-5 lg:rounded-4xl lg:mt-15"
+          >
             <img
               src="/playground.png"
               alt="hero"
               className=" w-100 h-60 md:h-100 md:w-170 lg:h-180 rounded-xl lg:w-300 lg:rounded-2xl "
             />
-          </div>
+          </motion.div>
 
           {/* Feature section */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
             id="features"
             className="flex flex-col items-center justify-center mt-10 font-serif md:mt-40 lg:mt-40"
           >
@@ -91,7 +123,13 @@ const Home = () => {
 
             <div className="flex flex-col items-center justify-center w-full gap-8 mt-10 md:flex-col lg:flex-row lg:gap-12 lg:mt-10">
               {steps.map((step) => (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.3 },
+                  }}
                   key={step.id}
                   className="flex flex-col items-center p-6 border rounded-2xl shadow-lg bg-white border-gray-300 w-full max-w-xs "
                 >
@@ -106,10 +144,10 @@ const Home = () => {
                   <p className="text-sm text-gray-600 text-center leading-relaxed">
                     {step.description}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </main>
 
         {/* Footer section */}

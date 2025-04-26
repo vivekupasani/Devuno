@@ -18,9 +18,14 @@ const Nav = () => {
       <motion.nav
         initial={{
           opacity: 0,
+          y: -100,
+          x: -100,
         }}
         animate={{
           opacity: 1,
+          y: 0,
+          x: 0,
+          ease: "easeInOut",
         }}
         transition={{
           duration: 0.3,
@@ -33,16 +38,37 @@ const Nav = () => {
 
         <div className="hidden sm:hidden lg:flex lg:flex-row lg:ml-20 lg:gap-28 lg:items-center">
           <div className="flex gap-4 text-[#97999e] cursor-pointer">
-            <span className="hover:text-white transition-colors duration-75">
+            <motion.span
+              whileHover={{
+                scale: 1,
+                paddingLeft: "5px",
+                paddingRight: "5px",
+              }}
+              className="hover:text-white transition-colors duration-75"
+            >
               {" "}
               <Link to="/">Home</Link>
-            </span>
-            <span className="hover:text-white transition-colors duration-75">
+            </motion.span>
+            <motion.span
+              whileHover={{
+                scale: 1,
+                paddingLeft: "5px",
+                paddingRight: "5px",
+              }}
+              className="hover:text-white transition-colors duration-75"
+            >
               <Link to="/playground">Playground</Link>
-            </span>
-            <span className="hover:text-white transition-colors duration-75">
+            </motion.span>
+            <motion.span
+              whileHover={{
+                scale: 1,
+                paddingLeft: "5px",
+                paddingRight: "5px",
+              }}
+              className="hover:text-white transition-colors duration-75"
+            >
               <Link to="/about-us">About Us</Link>
-            </span>
+            </motion.span>
           </div>
 
           <div className="flex gap-1 px-6 py-2 border-2 border-[#97999e] bg-[#101929] text-[#97999e] rounded-lg hover:text-white hover:border-white transition-colors duration-75">

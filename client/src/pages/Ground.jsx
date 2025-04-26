@@ -202,7 +202,7 @@ const Ground = () => {
               <Linkedin size={14} />
             </a>
             <a
-              href=""
+              href="https://x.com/VIVEKUpasani2"
               className="text-[#97999e] hover:text-white transition-colors"
             >
               <Twitter size={14} />
